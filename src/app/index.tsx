@@ -18,42 +18,26 @@ export default function Index() {
   return (
     <ScrollView style={styles.body}>
 
-
-      <Text style={styles.title}>Encontre o corte ideal para você</Text>
-
-      <Marquee
-        spacing={20}
-        speed={0.5}
-        direction="horizontal"
-        style={{ width: "100%", marginTop: 20 }}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          {DESTAQUES.map((destaque) => (
-            <View key={destaque.id} style={styles.card}>
-              <ImageBackground
-                source={destaque.img}
-                style={styles.imageContainer}
-                resizeMode="cover"
-              />
-            </View>
-          ))}
-        </View>
-      </Marquee>
-
-
+      <View style={styles.header}>
+        <Text style={styles.usernameText}>Username</Text>
+        <View style={styles.userPhoto} />
+      </View>
 
       <View style={styles.inputContainer}>
         <FontAwesome name="search" size={24} color="#8683A1" />
         <TextInput placeholderTextColor={"#8683A1"} placeholder="Pesquisar barbeiro, corte de cabelo..." style={styles.inputText} />
       </View>
 
+
+
       <View style={styles.subInputDetails}>
         <Entypo name="controller-record" size={16} color="#E5E7EB" />
+        <Entypo name="controller-record" size={16} color="#0130a5" />
+        <Entypo name="controller-record" size={16} color="#a7201d" />
+        <Entypo name="controller-record" size={16} color="#0130a5" />
         <Entypo name="controller-record" size={16} color="#E5E7EB" />
-        <Entypo name="controller-record" size={16} color="#E5E7EB" />
-        <Entypo name="controller-record" size={16} color="#E5E7EB" />
-        <View style={{ width: 32, height: 12, backgroundColor: "#363062", borderRadius: 24 }}></View>
+        <View style={{ width: 32, height: 12, backgroundColor: "#a7201d", borderRadius: 24 }}></View>
       </View>
-
 
       <Text style={styles.title}>Conheça os nossos profissionais</Text>
 
@@ -100,6 +84,30 @@ export default function Index() {
         </View>
       </View>
 
+      <Text style={styles.title}>Destaques</Text>
+
+      <Marquee
+        spacing={20}
+        speed={0.5}
+        direction="horizontal"
+        style={{
+          width: "100%",
+          marginVertical: 20,
+        }}
+      >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          {DESTAQUES.map((destaque) => (
+            <View key={destaque.id} style={styles.card}>
+              <ImageBackground
+                source={destaque.img}
+                style={styles.imageContainer}
+                resizeMode="cover"
+              />
+            </View>
+          ))
+          }
+        </View>
+      </Marquee>
     </ScrollView>
   );
 }
@@ -109,6 +117,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     paddingHorizontal: 20,
+  },
+  header: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 20
+  },
+  usernameText: {
+    fontSize: 22,
+    fontWeight: "bold"
+  },
+  userPhoto: {
+    width: 42,
+    height: 42,
+    borderRadius: 60,
+    backgroundColor: "#000",
   },
   title: {
     fontSize: 22,
@@ -120,12 +145,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   card: {
-    width: 300,
+    width: 250,
     marginRight: 20,
   },
   imageContainer: {
     width: "100%",
-    height: 200,
+    height: 350,
     borderRadius: 16,
     overflow: "hidden",
   },
