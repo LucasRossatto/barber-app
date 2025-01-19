@@ -2,6 +2,7 @@ import React from "react";
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Entypo from '@expo/vector-icons/Entypo';
+
 import {
   ScrollView,
   ImageBackground,
@@ -11,18 +12,20 @@ import {
   View,
 } from "react-native";
 import { Marquee } from '@animatereactnative/marquee';
-import DESTAQUES from '@/app/utils/homeDestaques';
+import DESTAQUES from '../utils/homeDestaques';
 
 export default function Index() {
   return (
     <ScrollView style={styles.body}>
+
+
       <Text style={styles.title}>Encontre o corte ideal para você</Text>
 
       <Marquee
         spacing={20}
         speed={0.5}
         direction="horizontal"
-        style={{width: "100%", marginTop: 20}}>
+        style={{ width: "100%", marginTop: 20 }}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           {DESTAQUES.map((destaque) => (
             <View key={destaque.id} style={styles.card}>
@@ -36,10 +39,22 @@ export default function Index() {
         </View>
       </Marquee>
 
+
+
       <View style={styles.inputContainer}>
         <FontAwesome name="search" size={24} color="#8683A1" />
         <TextInput placeholderTextColor={"#8683A1"} placeholder="Pesquisar barbeiro, corte de cabelo..." style={styles.inputText} />
       </View>
+
+      <View style={styles.subInputDetails}>
+        <Entypo name="controller-record" size={16} color="#E5E7EB" />
+        <Entypo name="controller-record" size={16} color="#E5E7EB" />
+        <Entypo name="controller-record" size={16} color="#E5E7EB" />
+        <Entypo name="controller-record" size={16} color="#E5E7EB" />
+        <View style={{ width: 32, height: 12, backgroundColor: "#363062", borderRadius: 24 }}></View>
+      </View>
+
+
       <Text style={styles.title}>Conheça os nossos profissionais</Text>
 
       <View style={styles.profissionaisContainer}>
@@ -56,6 +71,7 @@ export default function Index() {
           </View>
         </View>
       </View>
+
       <View style={styles.profissionaisContainer}>
         <View style={styles.fotoProfissional}></View>
         <View style={styles.infoProfissinalContainer}>
@@ -94,7 +110,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingHorizontal: 20,
   },
-  title: { fontSize: 22, fontWeight: "bold", marginTop: 30 },
+  title: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginTop: 10,
+  },
   container: {
     flexDirection: "row",
     alignItems: "center",
@@ -124,10 +144,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     flex: 1
   },
+  subInputDetails: {
+    flexDirection: "row",
+    gap: 4,
+    justifyContent: "flex-end",
+    flex: 1,
+    alignItems: "center",
+    marginTop: 10,
+  },
   profissionaisContainer: {
     marginVertical: 10,
     paddingRight: 20,
-    borderWidth: 1, flexDirection: "row", gap: 10
+    flexDirection: "row",
+    gap: 10,
 
   },
   fotoProfissional: {

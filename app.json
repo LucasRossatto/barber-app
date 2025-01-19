@@ -4,7 +4,7 @@
     "slug": "barber-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "app/assets/icons/barber-logo.png",
+    "icon": "src/assets/icons/barber-logo.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,17 +13,17 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "app/assets/icons/barber-logo.png",
+        "foregroundImage": "src/assets/icons/barber-logo.png",
         "backgroundColor": "#363062"
       }
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "app/assets/images/favicon.png"
+      "favicon": "src/assets/images/favicon.png"
     },
     "splash": {
-      "image": "app/assets/icons/barber-logo.png",
+      "image": "src/assets/icons/barber-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#363062"
     },

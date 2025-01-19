@@ -7,13 +7,13 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import CustomButton from "./components/CustomButton";
+import CustomButton from "../components/CustomButton";
 
 export default function Index() {
   return (
     <View style={styles.body}>
       <ImageBackground
-        source={require("./assets/images/barber-background.jpg")}
+        source={require("../assets/images/barber-background.jpg")}
         style={styles.imageContainer}
       >
 
